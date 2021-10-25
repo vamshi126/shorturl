@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortUrl</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+
+        background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M317.6%2c429.992C347.361%2c429.151%2c378.234%2c421.127%2c393.488%2c395.559C409.057%2c369.463%2c403.171%2c337.412%2c388.813%2c310.63C373.455%2c281.982%2c350.098%2c254.675%2c317.6%2c254.004C284.241%2c253.315%2c257.693%2c278.63%2c241.104%2c307.58C224.627%2c336.336%2c216.341%2c371.961%2c233.904%2c400.067C250.733%2c426.997%2c285.857%2c430.889%2c317.6%2c429.992' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M520.6616041439742 474.9632475157937L614.2052179866037 458.4689845223642 542.6920165751447 326.4006952551348z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1250.8550109967864 340.86148278271145L1280.5983523522632 432.4020748130464 1372.1389443825983 402.65873345756955 1342.3956030271213 311.1181414272346z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M63.97862639058806 303.3161485727679L-16.889775789703194 346.3146407354225 88.04216354442428 446.117997924532z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1490.9680061185607 109.15068257831321L1379.373407858621-6.6295203240885385 1338.2749218831752 127.79757014443216z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M574.219%2c535.278C625.655%2c537.657%2c677.996%2c516.796%2c703.835%2c472.258C729.753%2c427.583%2c721.215%2c372.182%2c694.475%2c327.994C668.744%2c285.474%2c623.832%2c260.998%2c574.219%2c258.068C518.132%2c254.755%2c453.388%2c262.806%2c426.556%2c312.17C400.353%2c360.377%2c433.55%2c415.402%2c463.833%2c461.156C490.051%2c500.769%2c526.767%2c533.083%2c574.219%2c535.278' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+background-attachment: fixed;
+background-size: cover;
+        height: 100%;
+        font-family: Arial;
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      form textarea {
+        width: 500px;
+        height: 150px;
+        border-radius: 3px;
+        border-color: red;
+        padding: 2px 10px;
+        box-sizing: border-box;
+        min-width: 300px;
+        margin-top: 29px;
+        font-size: 16px;
+      }
+
+      form button {
+        width: 90px;
+        height: 38px;
+        margin-top: 20px;
+        border-color:#0000FF;
+        background-color: #ffffff;
+        margin-right: 38px;
+        border-radius: 1rem;
+      }
+
+      form button:hover {
+        width: 90px;
+        height: 38px;
+        margin-top: 20px;
+        border-color: #0000FF;
+        background-color: #0000FF;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+          0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .containers {
+        height: 100%;
+      }
+
+      .card {
+        align-items: center;
+        padding-top: 10%;
+        padding-bottom: 10%;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+}
+
+      .header {
+        height: 124px;
+        margin-top: 0;
+        padding: 36px;
+        text-align: center;
+        background: #197278;
+        color: white;
+        font-size: 25px;
+      }
+      /* Page Content */
+      .content {
+        padding: 20px;
+        background: #edddd4;
+        height: calc(100% - 360px);
+        box-sizing: border-box;
+        padding-top: 80px;
+      }
+
+      .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+      .fa {
+        padding: 8px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 12px 10px;
+        margin-top: 23px;
+      }
+
+      
+
+      .predict {
+        margin-top: 42px;
+        font-size: 25px;
+        text-align: center;
+      }
+
+    
+      .link{
+        width: 700px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+
+      .op-link{
+        color: black;
+        display: flex;
+        align-items: center;
+      }
+      .form-control{
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+        {% block content %}
+  
+  <form method="POST">
+  {% csrf_token %} 
+
+  {{ form.as_p }} 
+
+<div class="op-link">
+  <input id='url' value="http://127.0.0.1:8000/{{ uid }}" class="form-control" readonly></input>
+
+<div class="tooltip">
+ <div onclick="myFunction()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+  <i class="fa fa-clipboard"></i></div>
+</div>
+</div>
+
+<button onclick="homeFunction()">Go Back</button>
+  </form>
+
+
+{% endblock content %}  
+
+      </div>
+
+      
+     
+      </div>
+    </div>
+
+  </form>
+
+  
+</div>
+<br>
+</body>
+
+<script>
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.querySelector("#url");
+  
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+
+function homeFunction(){
+  window.location.href("")
+}
+
+</script>
+
+</html>
+ 
